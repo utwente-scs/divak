@@ -1,0 +1,16 @@
+--- CMakeLists.txt.orig	2022-06-14 16:51:29.055086877 +0200
++++ CMakeLists.txt	2022-06-14 16:52:17.347471058 +0200
+@@ -23,6 +23,13 @@
+ add_library(
+     s2eplugins
+ 
++    # Custom plugins
++    s2e/Plugins/MemoryTracker.cpp
++    s2e/Plugins/OOBTracker.cpp
++    s2e/Plugins/util.cpp
++    s2e/Plugins/containers.cpp
++    s2e/Plugins/OOBAnalyzer.cpp
++
+     # Core plugins
+     s2e/Plugins/Core/BaseInstructions.cpp
+     s2e/Plugins/Core/HostFiles.cpp

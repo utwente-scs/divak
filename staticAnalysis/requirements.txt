@@ -1,0 +1,5 @@
+capstone >= 4.0.2
+coloredlogs >= 15.0.1
+matplotlib >= 3.5.1
+portion >= 2.2.0
+pyelftools >= 0.27

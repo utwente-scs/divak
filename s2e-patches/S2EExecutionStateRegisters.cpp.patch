@@ -1,0 +1,22 @@
+--- S2EExecutionStateRegisters.cpp.orig	2022-06-14 17:17:28.623506583 +0200
++++ S2EExecutionStateRegisters.cpp	2022-06-14 17:16:47.583123560 +0200
+@@ -350,6 +350,19 @@
+     }
+ }
+ 
++bool S2EExecutionStateRegisters::getRegType(unsigned offset, unsigned size, bool *isConcrete) {
++    bool _isConcrete;
++    if (!getRegionType(offset, size, &_isConcrete)) {
++        return false;
++    } else if (_isConcrete || m_symbolicRegs->isAllConcrete() || m_symbolicRegs->isConcrete(offset, size * 8)) {
++        *isConcrete = true;
++        return true;
++    } else {
++        *isConcrete = false;
++        return true;
++    }
++}
++
+ /**
+  * The architectural part of the concrete portion of CPUState contains the COMMON stuff.
+  * We skip this stuff in the comparison.

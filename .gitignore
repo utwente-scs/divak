@@ -1,0 +1,10 @@
+
+s2e-env/
+s2e/
+clang-13.0.1/
+llvmPass/build
+staticAnalysis/venv
+example/gzip/build
+example/gzip/*.json
+*.pyc
+*.log
